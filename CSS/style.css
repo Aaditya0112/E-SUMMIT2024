@@ -572,6 +572,11 @@ workshops
 
  .active{
     transform: scale(1.2);
+    height: 220px !important;
+    width: 220px !important;
+    transition: linear;
+    transition-delay: 300ms;
+
  }
 
 
@@ -591,18 +596,18 @@ workshops
     justify-content: center;
     align-items: center;
     transition: rotate 1s;
-    border-radius: 100%;
-    
+    border-radius: 100%;  
  }
 
- .carousel-container .items{ 
+ .items{ 
     position: relative;
     background: #f0f0f0;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border-radius: 100%;
     position: absolute;
     align-items: center;
+    overflow: hidden;
     transform:
     RotateZ(calc((var(--position) - 1) *(-360 / var(--quantity)) * 1deg))
     translateY(-75vh);    
@@ -613,7 +618,7 @@ workshops
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: RotateZ(calc((var(--position) - 1) *(360 / var(--quantity)) * 1deg));
+    /* transform: RotateZ(calc((var(--position) - 1) *(360 / var(--quantity)) * 1deg)); */
  }
 
  .controls{
