@@ -568,6 +568,9 @@ workshops
     background-color: #320B3D;
     background-image: url(../images/workshop_background.svg);
     overflow: hidden;
+    p{
+        margin-bottom: 2.25rem;
+    }
  }
 
  .active{
@@ -582,7 +585,7 @@ workshops
 
  .carousel{
     position: relative;
-    top: 18vh;
+    top: 12vh;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -621,6 +624,7 @@ workshops
     /* transform: RotateZ(calc((var(--position) - 1) *(360 / var(--quantity)) * 1deg)); */
  }
 
+
  .controls{
     position: absolute;
     top: 25%;
@@ -642,6 +646,13 @@ workshops
         border-radius: 100%;
     }
  }
+
+ @media screen and (min-width:992px) {
+    .carousel{
+        top : 18vh;
+    }
+    
+}
    
 
  
