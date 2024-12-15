@@ -1,0 +1,132 @@
+#events{
+  background: rgba(0, 0, 0, 0.37); }  
+
+     /* Parent container */
+     .parent {
+        display: flex;                /* Arrange child boxes in a row */        justify-content: center;      /* Center the child boxes horizontally */
+        justify-content: space-evenly;
+        align-items: center;          /* Center the child boxes vertically */
+        gap: 2%;                      /* Space between the circles */
+        flex-wrap: wrap;              /* Allow wrapping for smaller screens */
+        padding: 1rem;
+      }
+      
+      /* Child circles */
+      .child {
+        color: white;
+        width: 15vw;                  /* Responsive width */
+        height: 15vw;                 /* Match height to width for a circle */
+        max-width: 150px;             /* Set a maximum size */
+        max-height: 150px;            /* Set a maximum size */
+        min-width: 50px;              /* Set a minimum size */
+        min-height: 50px;             /* Set a minimum size */
+        border-radius: 50%;           /* Makes the shape circular */
+        display: flex;      
+        flex-direction: column;          /* Center any potential content inside */
+        justify-content: center;      /* Center horizontally */
+        align-content: center;          /* Center vertically */
+        transition: transform 0.3s;  /* Smooth scaling on hover */
+        position: relative;
+        background-color: #320B3D;
+        box-shadow: 0 0 20px #D519A6b3; 
+        font-size: 1rem;
+      }
+      
+
+
+      @keyframes rotate {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+
+        .child::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      padding: 10px; /* Adjust padding for border thickness */
+      background: conic-gradient(
+        from 180deg at 50% 50%, 
+        #800080 0deg, /* Purple */
+        #8B008B 60deg, /* Dark Magenta */
+        #9932CC 120deg, /* Amethyst */
+        #BA55D3 180deg, /* Medium Orchid */
+        #DA70D6 240deg, /* Orchid */
+        #EE82EE 300deg, /* Violet */
+        #800080 360deg /* Back to Purple */
+      );      -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      animation: rotate 3s linear infinite;
+
+    }
+    
+    .child_count.child1::after, .child_count.child3::after, .child_count.child2::after {
+      content: attr(text-target) ;
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.75;
+      border-radius: 5px;
+      font-size: 1.5rem;
+      color: white; }
+      
+      /* Hover effect */
+      .child:hover {
+        transform: scale(1.1);        /* Slightly enlarge the circle */
+      }
+      
+      @media screen and (min-width: 446px) {
+        .child{
+            font-size: 2.5rem;
+        }
+        
+      }
+
+
+
+    
+      @media screen and (max-width:500px) {
+        
+    .child::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      padding: 5px; /* Adjust padding for border thickness */
+      background: conic-gradient(from 180deg at 50% 50%, #F714D7 0deg, #7C1866 360deg);
+      -webkit-mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      mask: 
+          linear-gradient(#fff 0 0) content-box, 
+          linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+    }
+    
+    .child_count.child1::after, .child_count.child3::after, .child_count.child2::after {
+      content: attr(text-target) ;
+      position: absolute; bottom: -20px;
+      left: 50%; transform: translateX(-50%);
+      padding: 2px;
+      border-radius: 1px;
+       font-size: 10px;
+      color: white; }
+      }
