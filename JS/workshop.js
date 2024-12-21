@@ -42,21 +42,18 @@ function controlDisplay() {
         currentSlide(items, index);
     };
 
-    const autoScroll =  setInterval(rotateCarousel, 3000);
+    setInterval(rotateCarousel, 3000);
 
     // Next button functionality
     next.addEventListener('click', () => {
         rotateCarousel();
-        clearInterval(autoScroll);
-
-        
     });
 
     // Previous button functionality
     prev.addEventListener('click', () => {
         carousel.style.transition = 'transform 0.5s ease';
         carousel.style.transform = `rotate(${-(--i) * (360 / quantity)}deg)`;
-        clearInterval(autoScroll);
+    
         let index = indexing(i)
         currentSlide(items, index)
     
