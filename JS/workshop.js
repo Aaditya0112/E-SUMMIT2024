@@ -12,7 +12,7 @@ const next = document.querySelector('.next');
 const prev = document.querySelector('.prev');
 
 window.addEventListener('load', controlDisplay);
-window.addEventListener('resize', controlDisplay);
+// window.addEventListener('resize', controlDisplay);
 
 function controlDisplay() {
     const indexing = (i) => {
