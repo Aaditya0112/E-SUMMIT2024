@@ -17,8 +17,8 @@ window.addEventListener('load', controlDisplay);
 function controlDisplay() {
     const indexing = (i) => {
         let idx = i % quantity;
-        if (idx < 0) idx = idx * -1;
-        else if (idx > 0) idx = 11 - idx; 
+        // if (idx < 0) idx = idx * -1;
+        if (idx > 0) idx = 11 - idx; 
         else idx = 0;
         return idx;
     };
@@ -35,28 +35,31 @@ function controlDisplay() {
 
     // Function to rotate the carousel
     const rotateCarousel = () => {
-        carousel.style.transition = 'transform 0.5s ease';
+        carousel.style.transition = 'transform 1s ease';
         carousel.style.transform = `rotate(${-(++i) * (360 / quantity)}deg)`;
 
         let index = indexing(i);
         currentSlide(items, index);
     };
 
-    setInterval(rotateCarousel, 3000);
+    const interval = setInterval(rotateCarousel, 3000);
 
     // Next button functionality
     next.addEventListener('click', () => {
         rotateCarousel();
+        clearInterval(interval);
+
     });
 
     // Previous button functionality
     prev.addEventListener('click', () => {
         carousel.style.transition = 'transform 0.5s ease';
         carousel.style.transform = `rotate(${-(--i) * (360 / quantity)}deg)`;
-    
+
         let index = indexing(i)
         currentSlide(items, index)
-    
+        clearInterval(interval);
+
          
     })
 }
