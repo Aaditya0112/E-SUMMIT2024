@@ -39,6 +39,8 @@ Competition
   align-items: center;
   justify-content: center;
   border-radius: 0.25rem;
+  position: relative;
+  width: 100%;
   /* animation: slideIn 1.5s ease-out forwards; */
   /* transform: translateX(-101%); */
     
@@ -50,7 +52,7 @@ Competition
 
 }
 #screen img{
-  transform: scale(2);
+  transform: scale(1.5);
 
 }
 
@@ -154,6 +156,11 @@ align-items: center;
       flex-direction: row;
       height: 50vh; 
     }
+    #screen img{
+      transform: scale(2);
+    
+    }
+    
     
 .competition_image{
   
