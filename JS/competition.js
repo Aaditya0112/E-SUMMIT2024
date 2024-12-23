@@ -49,20 +49,21 @@ function displayContent(screen, description, section) {
 
 
 
-const buttons = document.querySelectorAll(".dynamic-button");
+// const buttons = document.querySelectorAll(".dynamic-button");
 
-for (let i = 0; i < buttons.length; i++) {
-  screen.innerHTML.clear();
-  description.innerHTML.clear();
-  buttons[i].addEventListener("click", () => {
-    const targetId = buttons[i].getAttribute("data-target");
-    const card = document.getElementById(targetId);
+// for (let i = 0; i < buttons.length; i++) {
+//   screen.innerHTML.clear();
+//   description.innerHTML.clear();
+//   buttons[i].addEventListener("click", () => {
+//     const targetId = buttons[i].getAttribute("data-target");
+//     const card = document.getElementById(targetId);
 
-    card.classList.add("animate");
+//     card.classList.add("animate");
 
-    // Optional: Reset animation after it completes for reuse
-    card.addEventListener("animationend", () => {
-      card.classList.remove("animate");
-    });
-  });
-}
+//     // Optional: Reset animation after it completes for reuse
+//     card.addEventListener("animationend", () => {
+//       card.classList.remove("animate");
+//     });
+//   });
+// }
+// Button active
